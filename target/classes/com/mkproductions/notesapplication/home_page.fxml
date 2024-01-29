@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<HBox xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.mkproductions.notesapplication.controllers.HomePageController">
+    <BorderPane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+        <center>
+            <VBox alignment="CENTER" spacing="20.0" BorderPane.alignment="CENTER">
+                <BorderPane.margin>
+                    <Insets/>
+                </BorderPane.margin>
+                <padding>
+                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+                </padding>
+                <TextField fx:id="mNoteTopicTextField" promptText="Note topic">
+                    <font>
+                        <Font size="25.0"/>
+                    </font>
+                </TextField>
+                <TextArea wrapText="true" fx:id="mNoteDescriptionTextArea" prefHeight="200.0" prefWidth="200.0"
+                          promptText="Note Description" VBox.vgrow="ALWAYS">
+                    <font>
+                        <Font size="20.0"/>
+                    </font>
+                </TextArea>
+                <ColorPicker fx:id="mNoteColorColorPicker" editable="true" promptText="Select Color"
+                             VBox.vgrow="SOMETIMES">
+                    <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                    </VBox.margin>
+                </ColorPicker>
+            </VBox>
+        </center>
+        <bottom>
+            <Button mnemonicParsing="false" onAction="#onAddNoteButton" text="ADD" BorderPane.alignment="CENTER">
+                <BorderPane.margin>
+                    <Insets bottom="50.0" left="50.0" right="50.0" top="50.0"/>
+                </BorderPane.margin>
+                <font>
+                    <Font size="20.0"/>
+                </font>
+            </Button>
+        </bottom>
+    </BorderPane>
+    <VBox alignment="CENTER" spacing="10.0" HBox.hgrow="ALWAYS">
+        <BorderPane pickOnBounds="false" VBox.vgrow="SOMETIMES">
+            <center>
+                <Button mnemonicParsing="false" onAction="#onRefreshPressed" text="REFRESH"
+                        BorderPane.alignment="CENTER">
+                    <font>
+                        <Font size="20.0"/>
+                    </font>
+                </Button>
+            </center>
+            <padding>
+                <Insets bottom="50.0" left="50.0" right="50.0" top="50.0"/>
+            </padding>
+        </BorderPane>
+        <ListView fx:id="mNotesListView" VBox.vgrow="ALWAYS"/>
+        <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+        </padding>
+    </VBox>
+</HBox>
